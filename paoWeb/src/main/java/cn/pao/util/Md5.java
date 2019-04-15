@@ -16,12 +16,7 @@ public class Md5 {
 	    String newstr=base64en.encode(md5.digest(str.getBytes("utf-8")));
 	    return newstr;
 	  }
-	   public void Study(){
-		   System.out.println("ni hao !!!");
-		   System.out.println("ni hao !!!");
-		   System.out.println("ni hao !!!");
-		   System.out.println("ni hao !!!");
-	   }
+
 
 	}
 
