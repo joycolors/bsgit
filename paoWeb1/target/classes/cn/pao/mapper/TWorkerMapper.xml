@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.pao.mapper.TWorkerMapper" >
+  <resultMap id="BaseResultMap" type="cn.pao.pojo.TWorker" >
+    <id column="worker_id" property="workerId" jdbcType="INTEGER" />
+    <result column="worker_name" property="workerName" jdbcType="VARCHAR" />
+    <result column="worker_pwd" property="workerPwd" jdbcType="VARCHAR" />
+    <result column="worker_tel" property="workerTel" jdbcType="VARCHAR" />
+    <result column="worker_credits_num" property="workerCreditsNum" jdbcType="INTEGER" />
+    <result column="worker_img" property="workerImg" jdbcType="VARCHAR" />
+    <result column="worker_this_login_time" property="workerThisLoginTime" jdbcType="TIMESTAMP" />
+    <result column="worker_last_login_time" property="workerLastLoginTime" jdbcType="TIMESTAMP" />
+    <result column="status" property="status" jdbcType="INTEGER" />
+    <result column="validateCode" property="validatecode" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    worker_id, worker_name, worker_pwd, worker_tel, worker_credits_num, worker_img, worker_this_login_time, 
+    worker_last_login_time, status, validateCode
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="cn.pao.pojo.TWorkerExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from t_worker
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from t_worker
+    where worker_id = #{workerId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from t_worker
+    where worker_id = #{workerId,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="cn.pao.pojo.TWorkerExample" >
+    delete from t_worker
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="cn.pao.pojo.TWorker" >
+    insert into t_worker (worker_id, worker_name, worker_pwd, 
+      worker_tel, worker_credits_num, worker_img, 
+      worker_this_login_time, worker_last_login_time, 
+      status, validateCode)
+    values (#{workerId,jdbcType=INTEGER}, #{workerName,jdbcType=VARCHAR}, #{workerPwd,jdbcType=VARCHAR}, 
+      #{workerTel,jdbcType=VARCHAR}, #{workerCreditsNum,jdbcType=INTEGER}, #{workerImg,jdbcType=VARCHAR}, 
+      #{workerThisLoginTime,jdbcType=TIMESTAMP}, #{workerLastLoginTime,jdbcType=TIMESTAMP}, 
+      #{status,jdbcType=INTEGER}, #{validatecode,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="cn.pao.pojo.TWorker" >
+    insert into t_worker
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="workerId != null" >
+        worker_id,
+      </if>
+      <if test="workerName != null" >
+        worker_name,
+      </if>
+      <if test="workerPwd != null" >
+        worker_pwd,
+      </if>
+      <if test="workerTel != null" >
+        worker_tel,
+      </if>
+      <if test="workerCreditsNum != null" >
+        worker_credits_num,
+      </if>
+      <if test="workerImg != null" >
+        worker_img,
+      </if>
+      <if test="workerThisLoginTime != null" >
+        worker_this_login_time,
+      </if>
+      <if test="workerLastLoginTime != null" >
+        worker_last_login_time,
+      </if>
+      <if test="status != null" >
+        status,
+      </if>
+      <if test="validatecode != null" >
+        validateCode,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="workerId != null" >
+        #{workerId,jdbcType=INTEGER},
+      </if>
+      <if test="workerName != null" >
+        #{workerName,jdbcType=VARCHAR},
+      </if>
+      <if test="workerPwd != null" >
+        #{workerPwd,jdbcType=VARCHAR},
+      </if>
+      <if test="workerTel != null" >
+        #{workerTel,jdbcType=VARCHAR},
+      </if>
+      <if test="workerCreditsNum != null" >
+        #{workerCreditsNum,jdbcType=INTEGER},
+      </if>
+      <if test="workerImg != null" >
+        #{workerImg,jdbcType=VARCHAR},
+      </if>
+      <if test="workerThisLoginTime != null" >
+        #{workerThisLoginTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="workerLastLoginTime != null" >
+        #{workerLastLoginTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="status != null" >
+        #{status,jdbcType=INTEGER},
+      </if>
+      <if test="validatecode != null" >
+        #{validatecode,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="cn.pao.pojo.TWorkerExample" resultType="java.lang.Integer" >
+    select count(*) from t_worker
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update t_worker
+    <set >
+      <if test="record.workerId != null" >
+        worker_id = #{record.workerId,jdbcType=INTEGER},
+      </if>
+      <if test="record.workerName != null" >
+        worker_name = #{record.workerName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.workerPwd != null" >
+        worker_pwd = #{record.workerPwd,jdbcType=VARCHAR},
+      </if>
+      <if test="record.workerTel != null" >
+        worker_tel = #{record.workerTel,jdbcType=VARCHAR},
+      </if>
+      <if test="record.workerCreditsNum != null" >
+        worker_credits_num = #{record.workerCreditsNum,jdbcType=INTEGER},
+      </if>
+      <if test="record.workerImg != null" >
+        worker_img = #{record.workerImg,jdbcType=VARCHAR},
+      </if>
+      <if test="record.workerThisLoginTime != null" >
+        worker_this_login_time = #{record.workerThisLoginTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.workerLastLoginTime != null" >
+        worker_last_login_time = #{record.workerLastLoginTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.status != null" >
+        status = #{record.status,jdbcType=INTEGER},
+      </if>
+      <if test="record.validatecode != null" >
+        validateCode = #{record.validatecode,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update t_worker
+    set worker_id = #{record.workerId,jdbcType=INTEGER},
+      worker_name = #{record.workerName,jdbcType=VARCHAR},
+      worker_pwd = #{record.workerPwd,jdbcType=VARCHAR},
+      worker_tel = #{record.workerTel,jdbcType=VARCHAR},
+      worker_credits_num = #{record.workerCreditsNum,jdbcType=INTEGER},
+      worker_img = #{record.workerImg,jdbcType=VARCHAR},
+      worker_this_login_time = #{record.workerThisLoginTime,jdbcType=TIMESTAMP},
+      worker_last_login_time = #{record.workerLastLoginTime,jdbcType=TIMESTAMP},
+      status = #{record.status,jdbcType=INTEGER},
+      validateCode = #{record.validatecode,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="cn.pao.pojo.TWorker" >
+    update t_worker
+    <set >
+      <if test="workerName != null" >
+        worker_name = #{workerName,jdbcType=VARCHAR},
+      </if>
+      <if test="workerPwd != null" >
+        worker_pwd = #{workerPwd,jdbcType=VARCHAR},
+      </if>
+      <if test="workerTel != null" >
+        worker_tel = #{workerTel,jdbcType=VARCHAR},
+      </if>
+      <if test="workerCreditsNum != null" >
+        worker_credits_num = #{workerCreditsNum,jdbcType=INTEGER},
+      </if>
+      <if test="workerImg != null" >
+        worker_img = #{workerImg,jdbcType=VARCHAR},
+      </if>
+      <if test="workerThisLoginTime != null" >
+        worker_this_login_time = #{workerThisLoginTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="workerLastLoginTime != null" >
+        worker_last_login_time = #{workerLastLoginTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="status != null" >
+        status = #{status,jdbcType=INTEGER},
+      </if>
+      <if test="validatecode != null" >
+        validateCode = #{validatecode,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where worker_id = #{workerId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="cn.pao.pojo.TWorker" >
+    update t_worker
+    set worker_name = #{workerName,jdbcType=VARCHAR},
+      worker_pwd = #{workerPwd,jdbcType=VARCHAR},
+      worker_tel = #{workerTel,jdbcType=VARCHAR},
+      worker_credits_num = #{workerCreditsNum,jdbcType=INTEGER},
+      worker_img = #{workerImg,jdbcType=VARCHAR},
+      worker_this_login_time = #{workerThisLoginTime,jdbcType=TIMESTAMP},
+      worker_last_login_time = #{workerLastLoginTime,jdbcType=TIMESTAMP},
+      status = #{status,jdbcType=INTEGER},
+      validateCode = #{validatecode,jdbcType=VARCHAR}
+    where worker_id = #{workerId,jdbcType=INTEGER}
+  </update>
+  
+  <select id="queryByPage" resultMap="BaseResultMap">
+  	select * from T_worker order by worker_id limit #{begin},#{limit}
+  </select>
+  
+  <select id="queryAll" resultMap="BaseResultMap">
+  	select * from T_worker
+  </select>
+  
+  <select id="findByWorkername" parameterType="java.lang.String" resultMap="BaseResultMap">
+  	select * from t_worker where worker_name = #{workername} 
+  </select>
+  
+  <select id="login" parameterType="cn.pao.pojo.TWorker" resultMap="BaseResultMap">
+  	select * from t_worker where worker_name = #{workerName} and worker_pwd = #{workerPwd}
+  </select>
+  
+  <update id="updateLoginTime" parameterType="cn.pao.pojo.TWorker">
+  	update t_worker set worker_last_login_time = #{workerLastLoginTime},worker_this_login_time = #{workerThisLoginTime} where worker_name = #{workerName}
+  </update>
+  
+  <select id="fuzzyQueryAll" parameterType="java.lang.String" resultMap="BaseResultMap">
+  	select * from t_worker where worker_name like CONCAT('%',#{workerName},'%')
+  </select>
+  
+  <select id="fuzzyQueryByPage"  resultMap="BaseResultMap">
+  	select * from t_worker where worker_name like CONCAT('%',#{workerName},'%') limit #{begin},#{limit}
+  </select>
+</mapper>
