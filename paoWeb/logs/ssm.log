@@ -1,0 +1,31 @@
+[INFO] [2019-03-27 19:14:11][org.springframework.web.context.ContextLoader]Root WebApplicationContext: initialization started
+  [INFO] [2019-03-27 19:14:11][org.springframework.web.context.support.XmlWebApplicationContext]Refreshing Root WebApplicationContext: startup date [Wed Mar 27 19:14:11 CST 2019]; root of context hierarchy
+  [INFO] [2019-03-27 19:14:11][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [applicationContext.xml]
+  [INFO] [2019-03-27 19:14:12][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+  [INFO] [2019-03-27 19:14:13][org.springframework.web.context.ContextLoader]Root WebApplicationContext: initialization completed in 2123 ms
+  [INFO] [2019-03-27 19:14:13][org.springframework.web.servlet.DispatcherServlet]FrameworkServlet 'paoWeb': initialization started
+  [INFO] [2019-03-27 19:14:13][org.springframework.web.context.support.XmlWebApplicationContext]Refreshing WebApplicationContext for namespace 'paoWeb-servlet': startup date [Wed Mar 27 19:14:13 CST 2019]; parent: Root WebApplicationContext
+  [INFO] [2019-03-27 19:14:13][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [SpringMvc.xml]
+  [INFO] [2019-03-27 19:14:25][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+  [INFO] [2019-03-27 19:14:25][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/userController/showUser],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String cn.pao.controller.UserController.showUsers(org.springframework.ui.Model)
+  [INFO] [2019-03-27 19:14:26][org.springframework.web.servlet.handler.SimpleUrlHandlerMapping]Mapped URL path [/js/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+  [INFO] [2019-03-27 19:14:26][org.springframework.web.servlet.handler.SimpleUrlHandlerMapping]Mapped URL path [/css/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#1'
+  [INFO] [2019-03-27 19:14:26][org.springframework.web.servlet.DispatcherServlet]FrameworkServlet 'paoWeb': initialization completed in 12784 ms
+  [WARN] [2019-03-27 19:15:09][org.springframework.web.servlet.PageNotFound]No mapping found for HTTP request with URI [/] in DispatcherServlet with name 'paoWeb'
+  [WARN] [2019-03-27 19:15:10][org.springframework.web.servlet.PageNotFound]No mapping found for HTTP request with URI [/favicon.ico] in DispatcherServlet with name 'paoWeb'
+  [INFO] [2019-03-27 19:16:40][org.springframework.web.context.ContextLoader]Root WebApplicationContext: initialization started
+  [INFO] [2019-03-27 19:16:40][org.springframework.web.context.support.XmlWebApplicationContext]Refreshing Root WebApplicationContext: startup date [Wed Mar 27 19:16:40 CST 2019]; root of context hierarchy
+  [INFO] [2019-03-27 19:16:40][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [applicationContext.xml]
+  [INFO] [2019-03-27 19:16:41][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+  [INFO] [2019-03-27 19:16:42][org.springframework.web.context.ContextLoader]Root WebApplicationContext: initialization completed in 1764 ms
+  [INFO] [2019-03-27 19:16:42][org.springframework.web.servlet.DispatcherServlet]FrameworkServlet 'paoWeb': initialization started
+  [INFO] [2019-03-27 19:16:42][org.springframework.web.context.support.XmlWebApplicationContext]Refreshing WebApplicationContext for namespace 'paoWeb-servlet': startup date [Wed Mar 27 19:16:42 CST 2019]; parent: Root WebApplicationContext
+  [INFO] [2019-03-27 19:16:42][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [SpringMvc.xml]
+  [INFO] [2019-03-27 19:16:43][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+  [INFO] [2019-03-27 19:16:43][org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]Mapped "{[/userController/showUser],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.String cn.pao.controller.UserController.showUsers(org.springframework.ui.Model)
+  [INFO] [2019-03-27 19:16:44][org.springframework.web.servlet.handler.SimpleUrlHandlerMapping]Mapped URL path [/js/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+  [INFO] [2019-03-27 19:16:44][org.springframework.web.servlet.handler.SimpleUrlHandlerMapping]Mapped URL path [/css/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#1'
+  [INFO] [2019-03-27 19:16:44][org.springframework.web.servlet.DispatcherServlet]FrameworkServlet 'paoWeb': initialization completed in 2355 ms
+  [WARN] [2019-03-27 19:17:01][org.springframework.web.servlet.PageNotFound]No mapping found for HTTP request with URI [/] in DispatcherServlet with name 'paoWeb'
+  [WARN] [2019-03-27 19:17:05][org.springframework.web.servlet.PageNotFound]No mapping found for HTTP request with URI [/] in DispatcherServlet with name 'paoWeb'
+  
